@@ -1,16 +1,7 @@
 from django.urls import path
-# from . views import ListaClientes, DetalleClientes
 from .  import views
 
 urlpatterns = [
-    # path('',ListaClientes.as_view(), name='articulos'),
-    # path('cliente',DetalleClientes.as_view(), name='cliente')
-
-    # path('fecha-actual/', views.mostrar_fecha_actual, name='mostrar_fecha_actual'),
-    # path('productos/', views.producto_list, name='producto_list'),
-    # path('index/', views.index, name='index'),
-    # path('productos/agregar/', views.agregar_producto, name='agregar_producto'),
-
     path('', views.inicio, name= "inicio"),
     path('cliente/', views.cliente_formulario, name= "cliente_formulario"),
     path('proveedor/', views.proveedor_formulario, name= "proveedor_formulario"),

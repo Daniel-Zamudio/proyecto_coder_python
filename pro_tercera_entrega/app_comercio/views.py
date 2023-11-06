@@ -1,18 +1,3 @@
-# from django.shortcuts import render
-# from django.views.generic.list import ListView
-# from django.views.generic.detail import DetailView
-# from .models import Cliente
-
-
-# class ListaClientes(ListView):
-#     model = Cliente
-#     context_object_name = 'clientes'
-
-# class DetalleClientes(DetailView):
-#     model = Cliente
-    # context_object_name = 'clientes'
-
-
 from django.shortcuts import render, redirect, HttpResponse
 from .models import Articulo, Cliente, Proveedor, Venta
 from .forms import ArticuloFormulario, ClienteFormulario, ProveedorFormulario, VentaFormulario
@@ -20,8 +5,6 @@ from .forms import ArticuloFormulario, ClienteFormulario, ProveedorFormulario, V
 
 # Create your views here.
 
-# def index(request):
-#     return render(request, 'index.html')
 def inicio(request):
     return render(request, "inicio.html")
 
@@ -98,7 +81,6 @@ def venta_formulario(request):
         return render(request, "venta_formulario.html", {"mi_formulario_venta" : mi_formulario_venta})
 
 def buscar_articulo(request):
-    # return render(request, "inicio.html")
     return render(request, "buscar_articulo.html")
 
 def buscar(request):
@@ -111,24 +93,4 @@ def buscar(request):
         respuesta = "No enviaste datos."
         return HttpResponse(respuesta)
 
-
-
-# def mostrar_fecha_actual(request):
-#     fecha_actual = datetime.datetime.now()
-#     return render(request, 'fecha_actual.html', {'fecha_actual': fecha_actual})
-
-# def producto_list(request):
-#     productos = Producto.objects.all()
-#     print(productos)
-#     return render(request, 'producto_list.html', {'productos': productos})
-
-# def agregar_producto(request):
-#     if request.method == 'POST':
-#         form = ProductoForm(request.POST)
-#         if form.is_valid():
-#             producto = form.save()
-#             return redirect('CoderApp:index')  
-#     else:
-#         form = ProductoForm()
-#     return render(request, 'producto_form.html', {'form': form})
 
