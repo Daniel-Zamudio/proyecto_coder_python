@@ -1,0 +1,18 @@
+<h1>Lista de pendientes</h1>
+
+<table>
+    <tr>
+        <th>Clientes</th>
+    </tr>
+    {% for cliente in clientes %}
+
+    <tr>
+        <td>{{cliente.dni}}</td>
+        <td>{{cliente.apellido}}</td>
+        <td>{{cliente.nombre}}</td>
+    </tr>
+
+    {% empty %}
+    <h3>Todavia no hay clientes</h3>
+    {%  endfor %}
+</table>
